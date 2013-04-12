@@ -34,7 +34,8 @@ Handlebars.registerHelper "getcurrentpage", (page) ->
 ### Code for the add artifacts page. ###
 Template.add_artifact.events "click button#add": ->
   Artifacts.insert (
-    NandE: $("#NandE").val()
+    Northing: $("#Northing").val()
+    Easting: $("#Easting").val()
     Datum : $("#Datum").val()
     Notes: $("#Notes").val()
     Username: $("#Username").val()
@@ -85,7 +86,7 @@ Template.add_artifact.events "click button#random": ->
 Template.artifact_search.artifacts = ->
   # Session.set('searched_artifacts', Artifacts.find({}))
   # return Session.get('searched_artifacts')
-  Artifacts.find({})
+  Artifacts.find()
 
 Template.artifact_search.events "click button#search" : ->
   formdata = getDataFromForm("#searchform")
