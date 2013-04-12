@@ -43,6 +43,8 @@ document.loadmap = ->
       console.log("Clicked: "+@row+" "+@col)
       Session.set('current_page', 'Artifact Search')
       Session.set('search_preset', {northing:@row, easting:@col})
+      search_data=Artifacts.find({Northing:@row, Easting:@col})
+      Session.set('filtered_artifacts',search_data)
       
   #Logic:
   image = paper.image("/mapsmall.jpg", 0, 0, imgdim, imgdim)

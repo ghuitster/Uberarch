@@ -1,6 +1,7 @@
 ### Set some defaults, and establish a database. ###
 Artifacts = new Meteor.Collection("artifacts")
 Session.set "current_page", 'home'
+Session.set "filtered_artifacts", Artifacts.find({})
 ######
 
 ### Global convenience functions ###
@@ -9,7 +10,7 @@ getDataFromForm = (formID)->
   $("#{formID} > *").each ->
     field = $(@)
     retobj[field.attr('id')] = field.val()
-  return retobj
+  return retobj	
 
 ######
 
@@ -70,7 +71,8 @@ Template.add_artifact.events "click button#random": ->
       i++
     word
   ##
-  $("#NandE").val(getRandomInt(0, 9)+", "+getRandomInt(0, 9))
+  $("#Northing").val(getRandomInt(0, 9))
+  $("#Easting").val(getRandomInt(0, 9))
   $("#Datum").val(0)
   $("#Notes").val(createRandomWord(5) + " " + createRandomWord(10))
   $("#Username").val(createRandomWord(7))
@@ -84,19 +86,10 @@ Template.add_artifact.events "click button#random": ->
 
 ### Searching artifacts. ###
 Template.artifact_search.artifacts = ->
-  # Session.set('searched_artifacts', Artifacts.find({}))
-  # return Session.get('searched_artifacts')
-  Artifacts.find()
+  Session.get('filtered_artifacts')
 
 Template.artifact_search.events "click button#search" : ->
-  formdata = getDataFromForm("#searchform")
-  if formdata['ArtifactType'] is "Filter by Type"
-    formdata['ArtifactType'] = ""
-  finddict = {}
-  for item in formdata
-    if not item is ""
-      finddict[item] = formdata[item]
-  console.log(finddict)
+	formdata=getDataFromForm("#searchform")
 
 Template.artifact_search.has_search_preset = ->
   if Session.get('search_preset')
