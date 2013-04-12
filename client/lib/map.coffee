@@ -16,11 +16,14 @@ document.loadmap = ->
       square.col = col
       square.attr "fill", "#000"
       square.attr "fill-opacity", "0"
-      square.attr "stroke", "#BF7C30"
+      square.attr "stroke", "#000"
+      square.attr "opacity", "0.5"
       textpadding = 3
       text = paper.text(x+textpadding, y+dim-5-textpadding, row+", "+col)
       text.attr "text-anchor", "start"
-      text.attr "fill", "#BF7C30"
+      text.attr "fill", "#000"
+      text.attr "font-size", "14"
+      text.attr "opacity", "0.75"
       movegroup.push square
       movegroup.push text
       return square
