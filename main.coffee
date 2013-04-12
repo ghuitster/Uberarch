@@ -4,6 +4,38 @@ exports = this
 Artifacts = new Meteor.Collection("artifacts")
 exports.Artifacts = Artifacts
 
+### Set up page forwarding ###
+if Meteor.isClient
+  Meteor.pages
+    # Page values can be an object of options, a function or a template name string
+    "/":
+      to: "home"
+      as: "Home"
+
+    "/home":
+      to: "home"
+      as: "Home"
+
+    "/add_artifact":
+      to: "add_artifact"
+      as: "Add Artifact"
+
+    "/artifact_search":
+      to: "artifact_search"
+      as: "Artifact Search"
+
+    "/view_action":
+      to: "view_action"
+      as: "Action Log"
+
+    "/view_teams":
+      to: "view_teams"
+      as: "View Teams"
+  ,
+    # optional options to pass to the PageRouter
+    defaults:
+      layout: "layout"
+
 ### Global convenience functions ###
 getDataFromForm = (formID)->
   retobj = {}

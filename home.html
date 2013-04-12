@@ -2,65 +2,31 @@
   <title>BYU Archaeology</title>
 </head>
 <body>
-  {{> layout}}
+  <!-- Nothing needed in body unless router autoRender is false and you manually use renderPages helper -->
 </body>
 
 
 <template name="layout">
   <div id="screen" class="dontchange">
-
-    {{#if iscurrentpage 'home'}}
-      {{> home}}
-    {{/if}}
-
-    {{#unless iscurrentpage 'home'}}
-      {{> breadcrumb}}
-    {{/unless}}
-
-    {{#if iscurrentpage 'Add Artifact'}}
-      {{> add_artifact}}
-    {{/if}}
-
-
-    {{#if iscurrentpage 'View Action'}}
-      {{> view_action}}
-    {{/if}}
-
-    {{#if iscurrentpage 'View Teams'}}
-      {{> view_teams}}
-    {{/if}}
-
-    {{#if iscurrentpage 'Artifact Search'}}
-      {{> artifact_search}}
-    {{/if}}
-
+    {{{yield}}}
   </div>
   {{runlayoutscripts}}
 </template>
 
 <template name="breadcrumb">
    <ul class="breadcrumbs">
-    <li><a onClick="Session.set('current_page', 'home')">Home</a></li>
+    <li><a onClick="parent.location=('home')"">Home</a></li>
     <li class="current"><a>{{getcurrentpage}}</li>
   </ul> 
 </template>
 
-<template name="homebutton">
-    <div class="row">
-      <div class="large-6 columns">
-        <button class="small button" onClick="Session.set('current_page', 'home')">Home</button>
-      </div>
-    </div>
-</template>
-
-
 <template name="home">
   <div class="row">
     <div class="large-2 columns leftnav">
-      <button class="indexButton medium button" onClick="Session.set('current_page', 'Add Artifact')">Add Artifact</button>
-      <button class="indexButton medium button" onClick="Session.set('current_page', 'View Action')">Action Log</button>
-      <button class="indexButton medium button" onClick="Session.set('current_page', 'View Teams')">View Teams</button>
-      <button class="indexButton medium button" onClick="Session.set('current_page', 'Artifact Search')">Artifact Search</button>
+      <button class="indexButton medium button" onClick="parent.location=('add_artifact')">Add Artifact</button>
+      <button class="indexButton medium button" onClick="parent.location=('view_action')">Action Log</button>
+      <button class="indexButton medium button" onClick="parent.location=('view_teams')">View Teams</button>
+      <button class="indexButton medium button" onClick="parent.location=('artifact_search')">Artifact Search</button>
     </div>
     <div class="large-10 columns" id="map">
     </div>

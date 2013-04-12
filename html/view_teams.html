@@ -1,4 +1,5 @@
 <template name='view_teams'>
+  {{>breadcrumb}}
   <row id="teamstuff">
     <div class="large-6 column center">
       <div class="flickable">
@@ -32,7 +33,7 @@
                 </li>
               </ul>
             </div>
-            <button class="small button centerHomeButton" onClick="Session.set('current_page', 'home')">Home</button>
+            <button class="small button centerHomeButton" onClick="parent.location=('home')"">Home</button>
           </div>
         </row>
       </div>
