@@ -1,8 +1,18 @@
-### Set up a database that can be accessed from the client,
+# Set up a database that can be accessed from the client,
 # or from the server and put it in the global namespace ###
 exports = this
 Artifacts = new Meteor.Collection("artifacts")
 exports.Artifacts = Artifacts
+
+### Global convenience functions ###
+getDataFromForm = (formID)->
+  retobj = {}
+  $("#{formID} > *").each ->
+    field = $(@)
+    if !!field.val() and field.val() isnt "Filter by Type"
+        retobj[field.attr('id')] = field.val()
+  return retobj
+######
 
 ### Set up page forwarding ###
 if Meteor.isClient
@@ -10,47 +20,36 @@ if Meteor.isClient
     # Page values can be an object of options, a function or a template name string
     "/":
       to: "home"
-      as: "Home"
+      nav: "Home"
 
     "/home":
       to: "home"
-      as: "Home"
+      nav: "Home"
 
     "/add_artifact":
       to: "add_artifact"
-      as: "Add Artifact"
+      nav: "Add Artifact"
 
     "/artifact_search":
       to: "artifact_search"
-      as: "Artifact Search"
+      nav: "Artifact Search"
 
     "/view_action":
       to: "view_action"
-      as: "Action Log"
+      nav: "Action Log"
 
     "/view_teams":
       to: "view_teams"
-      as: "View Teams"
+      nav: "View Teams"
   ,
     # optional options to pass to the PageRouter
     defaults:
       layout: "layout"
 
-### Global convenience functions ###
-getDataFromForm = (formID)->
-  retobj = {}
-  $("#{formID} > *").each ->
-    field = $(@)
-    retobj[field.attr('id')] = field.val()
-  return retobj
-
-######
-
-if Meteor.isClient
   ### Set up some defauilts ###
   Meteor.startup ->
     Session.set "current_page", 'home'
-    Session.set "filtered_artifacts", Artifacts.find({})
+    Session.set "filter_criteria", {}
   ######
 
   ### These functions are needed to render the templates correctly. ###
@@ -60,7 +59,7 @@ if Meteor.isClient
 
   Template.layout.runlayoutscripts = ->
     $(document).foundation()
-    return ""
+    return
   ######
 
   ### These are global helpers for all of the pages. ###
@@ -88,10 +87,16 @@ if Meteor.isClient
 
   ### Searching artifacts. ###
   Template.artifact_search.artifacts = ->
-    Session.get('filtered_artifacts')
+    criteria = Session.get 'filter_criteria'
+    regexes = {}
+    for key, value of criteria
+      regexes[key] = new RegExp ".*#{criteria[key]}.*", "i"
+    console.log regexes
+    Artifacts.find(regexes)
 
   Template.artifact_search.events "click button#search" : ->
-    formdata=getDataFromForm("#searchform")
+    criteria = getDataFromForm("#searchform")
+    Session.set 'filter_criteria', criteria
 
   Template.artifact_search.has_search_preset = ->
     if Session.get('search_preset')
@@ -109,5 +114,5 @@ if Meteor.isClient
   Template.view_teams.makeflickable = ->
     Meteor.defer ->
       Flickable('.flickable', enableMouseEvents: true)
-      return ""
-  ######
+      return
+  ###
