@@ -1,7 +1,12 @@
-centerHomeButton {
-	float: right;
-	margin-right: -49px;
+.centerHomeButton {
+	float: left;
+	margin-left: 686px;
 	margin-top: 10px;
+ }
+ 
+ .leftHomeButton {
+ 	float: left;
+ 	margin-left: 14px;
  }
 
 row {
@@ -16,9 +21,9 @@ body {
 
 dl {
 	color: white;
-    margin-left: 2.00em;
+    //margin-left: 2.00em;
 }
 
 #search {
-	margin-left: 397px;
+	margin-left: 324px;
 }
