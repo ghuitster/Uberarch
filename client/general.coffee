@@ -112,6 +112,6 @@ Template.artifact_search.get_search_preset = (NorE) ->
 ### Code for view teams page ###
 Template.view_teams.makeflickable = ->
   Meteor.defer ->
-    Flickable '.flickable', enableMouseEvents: true
+    Flickable('.flickable', enableMouseEvents: true)
     return ""
 ######
