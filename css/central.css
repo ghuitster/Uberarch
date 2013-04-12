@@ -1,5 +1,7 @@
-#screen {
-
+centerHomeButton {
+	float: right;
+	margin-right: -49px;
+	margin-top: 10px;
  }
 
 row {
@@ -8,9 +10,15 @@ row {
 
 body {
     color: white;
+    background-color: #BF7C30;
+    background: #BF7C30;
 }
 
 dl {
 	color: white;
     margin-left: 2.00em;
+}
+
+#search {
+	margin-left: 397px;
 }

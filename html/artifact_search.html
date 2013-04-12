@@ -10,12 +10,19 @@
 					<option>Seeds</option>
 					<option>Arrow Heads</option>
 				</select>
+				<br><br>
+				<span>Search by Keyword</span>
 				<input id="Keyword" type="text" placeholder="Search by Keyword">
+				<span>Search by Northing</span>
 				<input id="Northing" {{#if has_search_preset}}value="{{get_search_preset 'northing'}}{{/if}}" type="text" placeholder="Search by Northing">
+				<span>Search by Easting</span>
 				<input id="Easting" {{#if has_search_preset}}value="{{get_search_preset 'easting'}}{{/if}}" type="text" placeholder="Search by Easting">
+				<span>Search by Depth</span>
 				<input id="Depth" type="text" placeholder="Filter by Depth">
+				<span>Search by Researcher</span>
 				<input id="Researcher" type="text" placeholder="Filter by Researcher">
 				</form>
+				<button class="small button" id="search">Search</button>
 			</div>
 		</div>
 	
@@ -28,12 +35,6 @@
 				</DL>
 		</div>
 	</div>
-
-    <div class="row">
-      <div class="large-12 columns" style="text-align: right;">
-        <button class="small button" id="search">Search</button>
-      </div>
-    </div>
 
 
 </template>
