@@ -41,11 +41,8 @@ if Meteor.isClient
 
       # Click callback:
       clickedhandler = ()->
-        console.log("Clicked: "+@row+" "+@col)
-        Session.set('current_page', 'Artifact Search')
-        Session.set('search_preset', {northing:@row, easting:@col})
-        search_data=Artifacts.find({Northing:@row, Easting:@col})
-        Session.set('filtered_artifacts',search_data)
+        console.log "Clicked: "+@row+" "+@col
+        parent.location = ("/artifact_search/#{@row}/#{@col}")
         
     #Logic:
     image = paper.image("/mapsmall.jpg", 0, 0, imgdim, imgdim)

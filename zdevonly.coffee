@@ -1,6 +1,6 @@
 if Meteor.isClient
   Template.add_artifact.events "click button#random": ->
-    ## Helpful functions
+    # Helpful functions
     getRandomInt = (min, max) ->
       Math.floor(Math.random() * (max - min + 1)) + min
 
@@ -23,7 +23,7 @@ if Meteor.isClient
         word += (if i * 2 < length - 1 then randVowel else "")
         i++
       word
-    ##
+    #
     $("#Northing").val(getRandomInt(0, 9))
     $("#Easting").val(getRandomInt(0, 9))
     $("#Datum").val(0)
