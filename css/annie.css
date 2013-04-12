@@ -1,0 +1,42 @@
+
+#map {
+	height: 768px;
+	margin: 0;
+}
+
+.indexButton{
+
+  margin-top: 10%;
+  background-color: #FFECDE;
+  color: black;
+}
+
+.navButton{
+	background-color: #AC5800;
+	margin-top: 5px;
+	margin-left: 3px;
+}
+.lightNavButton{
+	background-color: #FFECDE;
+	color: black;
+}
+
+.breadcrumbs{
+	background-color: #FFECDE;
+}
+
+#teamstuff{
+	width:100%;
+}
+
+#bottomButtons{
+	background-color: #FFECDE;
+}
+
+#screen{
+	background-color: #BF7C30;
+}
+
+#notes{
+	height: 200px;
+}

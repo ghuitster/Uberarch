@@ -1,0 +1,46 @@
+<template name="artifact_search">
+	<div class="row">
+		<div id="left">
+			<div class="large-6 columns">
+				<form id="searchform">
+				<select id="ArtifactType" class="medium">
+					<option>Filter by Type</option>
+					<option>Pottery</option>
+					<option>Bones</option>
+					<option>Seeds</option>
+					<option>Arrow Heads</option>
+				</select>
+				<input id="Keyword" type="text" placeholder="Search by Keyword">
+				<input id="Northing" {{#if has_search_preset}}value="{{get_search_preset 'northing'}}{{/if}}" type="text" placeholder="Search by Northing">
+				<input id="Easting" {{#if has_search_preset}}value="{{get_search_preset 'easting'}}{{/if}}" type="text" placeholder="Search by Easting">
+				<input id="Depth" type="text" placeholder="Filter by Depth">
+				<input id="Researcher" type="text" placeholder="Filter by Researcher">
+				</form>
+			</div>
+		</div>
+	
+		<div id="right">
+			<div class="large-6 columns">
+				<DL id="artifactslist">
+					{{#each artifacts}}
+						{{> artifact}}
+					{{/each}}
+				</DL>
+		</div>
+	</div>
+
+    <div class="row">
+      <div class="large-12 columns" style="text-align: right;">
+        <button class="small button" id="search">Search</button>
+      </div>
+    </div>
+
+
+</template>
+
+<template name="artifact">
+	<DT>
+	<STRONG>{{Notes}}</STRONG>
+	<DD>FS# {{ArtifactNumber}} Found by {{Username}} in Grid {{NandE}} at a depth of {{Depth}}	
+	</DT>
+</template>

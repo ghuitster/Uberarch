@@ -1,0 +1,40 @@
+<template name="add_artifact">
+  <div id="formDiv" class="row">
+    <div class = "large-6 columns">
+      <form id="add_form">
+        <input id="NandE" type="text" placeholder="Northing and Easting">
+        <input id="Datum" type="text" placeholder="Datum">
+        <textarea id="Notes" placeholder="Notes" id="notes"></textarea>
+        <input id="Username" type="text" placeholder="Your Name">
+    </div>
+    <div class="large-6 columns">
+        <div class="row">
+          <div class="large-5 columns">
+            <input type="text" id="ArtifactNumber" placeholder="Artifact #">
+          </div>
+          <div class="large-4 columns">
+            <select id="ArtifactType" class="medium">
+              <option>Artifact Type</option>
+              <option>Pottery</option>
+              <option>Bones</option>
+              <option>Seeds</option>
+              <option>Arrow Heads</option>
+            </select>
+          </div>  
+          <div class="large-3 columns">
+            <button class="lightNavButton small button">Camera</button>
+          </div> 
+        </div>
+        <input id="Depth" type="text" placeholder="Depth">
+      </form> 
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns" style="text-align: right;">
+        <button class="small button" id="random">Generate Random</button>
+        <button class="small button" id="add">Add</button>
+      </div>
+    </div>
+
+  </div>
+</template>

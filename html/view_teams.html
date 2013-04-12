@@ -1,0 +1,46 @@
+<template name='view_teams'>
+  <row id="teamstuff">
+    <div class="large-6 column center">
+      <div class="flickable">
+        <ul>
+          <li class="flicked">
+            <div class="flicked">
+              <form id="teamForm">
+                Team # <input type="text" name="teamNumber" value="Team 1"><br>
+                Crew Chief <input type="text" name="crewChief" value="Marty McFly"><br>
+                Members <textarea rows="50">Johnson and Johnson</textarea>
+                Responsibilities <textarea rows="50">Latrines</textarea>
+              </form>
+            </li>
+            <li class="flicked">
+              <div class="flicked">
+                <form id="teamForm">
+                  Team # <input type="text" name="teamNumber" value="Team 2"><br>
+                  Crew Chief <input type="text" name="crewChief" value="Dr. Jones"><br>
+                  Members <textarea rows="50">Meg, Herc, and Phil</textarea>
+                  Responsibilities <textarea rows="50">Combing the garden.</textarea>
+                </form>
+              </li>
+              <li class="flicked">
+                <div class="flicked">
+                  <form id="teamForm">
+                    Team # <input type="text" name="teamNumber" value="Team 3"><br>
+                    Crew Chief <input type="text" name="crewChief" value="Cecil"><br>
+                    Members <textarea rows="50">Einstein, Dan Olsen, Karl</textarea>
+                    Responsibilities <textarea rows="50">Telling everyone else what to do.</textarea>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </row>
+      </div>
+
+      <script type="text/javascript">
+        Flickable('.flickable', {
+          enableMouseEvents: true,
+        });
+      </script>
+
+
+    </template>

@@ -1,0 +1,43 @@
+#map {
+	background: white;
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	width: 833.328125px;
+	height: 768px;
+}
+
+.map rect {
+  fill: #fff;
+  fill-opacity: .15;
+  stroke: red;
+  shape-rendering: crispEdges;
+}
+
+.layer rect {
+  fill: #000;
+  fill-opacity: .10;
+  stroke: black;
+  shape-rendering: auto;
+  vector-effect: non-scaling-stroke;
+}
+
+.flickable {
+  /*width: 500px;*/
+  overflow: hidden;
+  /*border: 1px solid black;*/
+}
+
+.flicked {
+  padding: 10px;
+  width: 500px;
+}
+
+.leftnav {
+  padding-top: 20px;
+}
+
+#artifactslist {
+  height: 600px;
+  overflow: auto;
+}
