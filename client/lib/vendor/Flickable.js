@@ -1,4 +1,4 @@
-var Flickable = function(elementSelector, options) {
+Flickable = function(elementSelector, options) {
 
     var elements = [],
         elementRegex = new RegExp('^([#.])([^#.,> ]+)'),
