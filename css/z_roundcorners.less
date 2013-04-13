@@ -1,0 +1,15 @@
+/* Mixin */
+.border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+    -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+    -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+    border-radius: @topleft @topright @bottomright @bottomleft;
+}
+ 
+/* Implementation */
+button, #map, input, textarea {
+    .border-radius-custom(2px, 2px, 2px, 2px);
+} 
+
+textarea {
+	resize: none;
+}
