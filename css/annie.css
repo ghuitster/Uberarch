@@ -7,7 +7,7 @@
 .indexButton{
 
   margin-top: 10%;
-  background-color: #FFECDE;
+  background-color: #f3efec;
   color: black;
 }
 
@@ -17,12 +17,18 @@
 	margin-left: 3px;
 }
 .lightNavButton{
-	background-color: #FFECDE;
+	background-color: #f3efec;
 	color: black;
 }
 
 .breadcrumbs{
-	background-color: #FFECDE;
+	background-color: #4a3d2f;
+	border: none;
+	color: white;
+}
+
+.breadcrumbs li.current a {
+	color: white;
 }
 
 #teamstuff{
@@ -30,11 +36,11 @@
 }
 
 #bottomButtons{
-	background-color: #FFECDE;
+	background-color: #f3efec;
 }
 
 #screen{
-	background-color: #BF7C30;
+	background-color: #624c32;
 }
 
 #notes{

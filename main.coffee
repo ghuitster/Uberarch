@@ -75,6 +75,10 @@ if Meteor.isClient
     criteria = getDataFromForm("#searchform")
     Session.set 'filter_criteria', criteria
 
+  Template.artifact_search.events "click button#clear" : ->
+    $('input').each ->
+      
+
   Template.artifact_search.has_search_preset = ->
     if Session.get('search_preset')
       return true
