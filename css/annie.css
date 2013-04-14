@@ -31,10 +31,6 @@
 	color: white;
 }
 
-#teamstuff{
-	width:100%;
-}
-
 #bottomButtons{
 	background-color: #f3efec;
 }
@@ -44,5 +40,5 @@
 }
 
 #notes{
-	height: 200px;
+	height: 100px;
 }

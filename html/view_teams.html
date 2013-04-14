@@ -1,41 +1,54 @@
 <template name='view_teams'>
   {{>breadcrumb}}
-  <row id="teamstuff">
-    <div class="large-6 column center">
-      <div class="flickable">
-        <ul>
-          <li class="flicked">
-            <div class="flicked teambox">
+  <div class="row">
+    <div class="large-12 column">
+
+      <div class="teamswrapper">
+        <div class="internal">
+          <div class="horizontalbox">
+            <div class="text">
               <form id="teamForm">
-                Team # <input type="text" name="teamNumber" value="Team 1"><br>
-                Crew Chief <input type="text" name="crewChief" value="Marty McFly"><br>
-                Members <textarea rows="50">Johnson and Johnson</textarea>
-                Responsibilities <textarea rows="50">Latrines</textarea>
+                <p>Team # <input type="text" name="teamNumber" value="Team 1"/></p>
+                <p>Crew Chief <input type="text" name="crewChief" value="Marty McFly"/></p>
+                <p>Members <textarea rows="50">Johnson and Johnson</textarea></p>
+                <p>Responsibilities <textarea rows="50">Latrines</textarea></p>
               </form>
-            </li>
-            <li class="flicked">
-              <div class="flicked teambox">
-                <form id="teamForm">
-                  Team # <input type="text" name="teamNumber" value="Team 2"><br>
-                  Crew Chief <input type="text" name="crewChief" value="Dr. Jones"><br>
-                  Members <textarea rows="50">Meg, Herc, and Phil</textarea>
-                  Responsibilities <textarea rows="50">Combing the garden.</textarea>
-                </form>
-              </li>
-              <li class="flicked">
-                <div class="flicked teambox">
-                  <form id="teamForm">
-                    Team # <input type="text" name="teamNumber" value="Team 3"><br>
-                    Crew Chief <input type="text" name="crewChief" value="Cecil"><br>
-                    Members <textarea rows="50">Einstein, Dan Olsen, Karl</textarea>
-                    Responsibilities <textarea rows="50">Telling everyone else what to do.</textarea>
-                  </form>
-                </li>
-              </ul>
             </div>
-            <button class="small button centerHomeButton" onClick="parent.location=('/home')"">Home</button>
           </div>
-        </row>
+          <div class="horizontalbox">
+            <div class="text">
+              <form id="teamForm">
+                <p>Team # <input type="text" name="teamNumber" value="Team 2"/></p>
+                <p>Crew Chief <input type="text" name="crewChief" value="Dr. Jones"/></p>
+                <p>Members <textarea rows="50">Meg, Herc, and Phil</textarea></p>
+                <p>Responsibilities <textarea rows="50">Combing the garden.</textarea></p>
+              </form>
+            </div>
+          </div>
+          <div class="horizontalbox">
+            <div class="text">
+              <form id="teamForm">
+                <p>Team # <input type="text" name="teamNumber" value="Team 3"/></p>
+                <p>Crew Chief <input type="text" name="crewChief" value="Cecil"/></p>
+                <p>Members <textarea rows="50">Einstein, Dan Olsen, Karl</textarea></p>
+                <p>Responsibilities <textarea rows="50">Telling everyone else what to do.</textarea></p>
+              </form>
+            </div>
+          </div>
+          <div class="horizontalbox">
+            <div class="text">
+              <form id="teamForm">
+                <p>Team # <input type="text" name="teamNumber" value="Team 4"/></p>
+                <p>Crew Chief <input type="text" name="crewChief" value="Steve"/></p>
+                <p>Members <textarea rows="50">Yulemark, Thon, Augustin</textarea></p>
+                <p>Responsibilities <textarea rows="50">Making lunch.</textarea></p>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      {{makeflickable}}
-    </template>
+      <br>
+<button class="small button" onClick="parent.location=('/home')">Home</button>
+    </div>
+  </div>
+</template>

@@ -97,13 +97,6 @@ if Meteor.isClient
       return preset['Easting']
   #
 
-  # Code for view teams page #
-  Template.view_teams.makeflickable = ->
-    Meteor.defer ->
-      Flickable('.flickable', enableMouseEvents: true)
-      return
-  #
-
   # Action log #
   Template.view_action.artifacts = ->
     Artifacts.find {}, {sort: {DBNumber: -1}, limit: 25}
