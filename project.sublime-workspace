@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"view",
+				"view_teams"
+			],
+			[
+				"cle",
+				"clearAddForm"
+			],
+			[
+				"Art",
+				"Artifacts"
+			],
+			[
+				"No",
+				"Northing"
+			],
+			[
+				"sear",
+				"search_preset"
+			],
+			[
+				"Ar",
+				"Artifacts"
+			],
+			[
+				"fil",
+				"filter_criteria"
+			],
+			[
 				"add",
 				"add_artifact"
 			],
@@ -12,28 +40,12 @@
 				"Artifacts"
 			],
 			[
-				"sear",
-				"searched_artifacts"
-			],
-			[
-				"No",
-				"NorE"
-			],
-			[
-				"Art",
-				"ArtifactType"
-			],
-			[
 				"Artif",
 				"ArtifactNumber"
 			],
 			[
 				"artif",
 				"artifact_search"
-			],
-			[
-				"Ar",
-				"Artifacts"
 			],
 			[
 				"A",
@@ -56,37 +68,10 @@
 	"buffers":
 	[
 		{
-			"file": "main.coffee",
-			"settings":
-			{
-				"buffer_size": 2914,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<head>\n  <title>BYU Archaeology</title>\n</head>\n<body>\n  <!-- Nothing needed in body unless router autoRender is false and you manually use renderPages helper -->\n</body>\n\n\n<template name=\"layout\">\n  <div id=\"screen\" class=\"dontchange\">\n    {{{yield}}}\n  </div>\n  {{runlayoutscripts}}\n</template>\n\n<template name=\"breadcrumb\">\n   <ul class=\"breadcrumbs\">\n    <li><a onClick=\"Session.set('current_page', 'home')\">Home</a></li>\n    <li class=\"current\"><a>{{getcurrentpage}}</li>\n  </ul> \n</template>\n\n<template name=\"home\">\n  <div class=\"row\">\n    <div class=\"large-2 columns leftnav\">\n      <button class=\"indexButton medium button\" onClick=\"parent.location=('add_artifact')\">Add Artifact</button>\n      <button class=\"indexButton medium button\" onClick=\"parent.location=('view_action')\">Action Log</button>\n      <button class=\"indexButton medium button\" onClick=\"Session.set('current_page', 'View Teams')\">View Teams</button>\n      <button class=\"indexButton medium button\" onClick=\"Session.set('current_page', 'Artifact Search')\">Artifact Search</button>\n    </div>\n    <div class=\"large-10 columns\" id=\"map\">\n    </div>\n    {{rendermap}}\n  </div>\n</template>\n",
-			"file": "home.html",
-			"file_size": 1173,
-			"file_write_time": 130102566710000000,
-			"settings":
-			{
-				"buffer_size": 1162,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "html/add_artifact.html",
 			"settings":
 			{
-				"buffer_size": 1478,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "html/artifact_search.html",
-			"settings":
-			{
-				"buffer_size": 1592,
+				"buffer_size": 1581,
 				"line_ending": "Unix"
 			}
 		},
@@ -94,15 +79,31 @@
 			"file": "html/view_action.html",
 			"settings":
 			{
-				"buffer_size": 805,
+				"buffer_size": 549,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "html/view_teams.html",
+			"file": "map.coffee",
 			"settings":
 			{
-				"buffer_size": 1875,
+				"buffer_size": 1595,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.coffee",
+			"settings":
+			{
+				"buffer_size": 3578,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/ztrumpall.less",
+			"settings":
+			{
+				"buffer_size": 599,
 				"line_ending": "Unix"
 			}
 		}
@@ -110,9 +111,37 @@
 	"build_system": "Packages/Python/Python.sublime-build",
 	"command_palette":
 	{
-		"height": 203.0,
+		"height": 375.0,
 		"selected_items":
 		[
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"emo",
+				"Package Control: Remove Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"less",
+				"Set Syntax: LESS"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
 			[
 				"inden",
 				"Indentation: Reindent Lines"
@@ -122,24 +151,12 @@
 				"Package Control: Remove Package"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"package",
-				"Package Control: Install Package"
-			],
-			[
-				"insta",
 				"Package Control: Install Package"
 			],
 			[
 				"move",
 				"Origami: Move File to Pane on the Right"
-			],
-			[
-				"in",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"set sy",
@@ -156,10 +173,6 @@
 			[
 				"set syntax co",
 				"Set Syntax: CoffeeScript"
-			],
-			[
-				"ind",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"o",
@@ -226,7 +239,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 435.0
+		"width": 561.0
 	},
 	"console":
 	{
@@ -246,19 +259,27 @@
 	},
 	"file_history":
 	[
-		"/Users/murphyra/Github/Uberarch/.meteor/local/build/static_cacheable/template.home.js",
+		"/Users/murphyra/Github/Uberarch/home.html",
+		"/Users/murphyra/Github/Uberarch/css/central.css",
+		"/Users/murphyra/Github/Uberarch/css/annie.css",
+		"/Users/murphyra/Github/Uberarch/css/z_roundcorners.less",
 		"/Users/murphyra/Github/Uberarch/main.coffee",
-		"/Users/murphyra/Github/Uberarch/zdevonly.coffee",
+		"/Users/murphyra/Github/Uberarch/css/Foundation/foundation.min.css",
+		"/Users/murphyra/Github/Uberarch/project.sublime-workspace",
+		"/Users/murphyra/Github/Uberarch/css/Foundation/foundation.css",
+		"/Users/murphyra/Github/Uberarch/css/colormath.css",
+		"/Users/murphyra/Github/Uberarch/html/view_teams.html",
+		"/Users/murphyra/Github/Uberarch/html/view_action.html",
+		"/Users/murphyra/Github/Uberarch/html/artifact_search.html",
 		"/Users/murphyra/Github/Uberarch/html/add_artifact.html",
+		"/Users/murphyra/Github/Uberarch/zdevonly.coffee",
 		"/Users/murphyra/Github/Uberarch/map.coffee",
 		"/Users/murphyra/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/murphyra/Github/Uberarch/project.sublime-project",
+		"/Users/murphyra/Github/Uberarch/.meteor/local/build/static_cacheable/template.home.js",
 		"/Users/murphyra/Github/Uberarch/general.coffee",
 		"/Users/murphyra/Github/leaderboard/leaderboard.js",
-		"/Users/murphyra/Github/Uberarch/css/central.css",
 		"/Users/murphyra/Github/Uberarch/client/general.coffee",
-		"/Users/murphyra/Github/Uberarch/html/view_teams.html",
-		"/Users/murphyra/Github/Uberarch/css/annie.css",
-		"/Users/murphyra/Github/Uberarch/home.html",
 		"/Users/murphyra/Github/Uberarch/client/lib/map.coffee",
 		"/Users/murphyra/Github/Uberarch/server/server.coffee",
 		"/Users/murphyra/Github/Uberarch/lib/collection.coffee",
@@ -379,6 +400,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"524A42",
+			"button",
+			"a {",
+			"a",
+			"c79c57",
+			"FFECDE",
+			"BF7C30",
+			"parent.location=('home')",
+			"##",
+			"###",
+			"theme",
+			"Keyword",
+			"<button class=\"small button\" onClick=\"parent.location=('home')\"\">Home</button>",
+			"filter by",
+			"return \"\"",
+			"as:",
+			"as",
+			"theme",
+			"onClick=\"Session.set('current_page', 'home')",
 			"Session.set('current_page', 'View Action')",
 			"view_action",
 			"artifact_search",
@@ -404,7 +444,7 @@
 			"Helen",
 			"#b0833b",
 			"#452E1B",
-			"#624c32",
+			"#BF7C30",
 			"#2284a1",
 			"#2ba6cb",
 			"light",
@@ -441,8 +481,19 @@
 		"regex": false,
 		"replace_history":
 		[
+			"402a10",
+			"623d32",
+			"21343e",
+			"f3efec",
+			"624c32",
+			"parent.location=('/home')",
+			"#",
+			"<button class=\"small button\" onClick=\"parent.location=('home')\">Home</button>",
+			"return",
+			"onClick=\"parent.location=('home')\"",
+			"parent.location=('home')",
 			"parent.location=('view_action')",
-			"#21343e",
+			"#524A42",
 			"#FAA764",
 			"#68462A",
 			"#452E1B",
@@ -464,24 +515,81 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "main.coffee",
+					"file": "html/add_artifact.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2914,
+						"buffer_size": 1581,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								368,
-								368
+								1413,
+								1413
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html/view_action.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 549,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								191,
+								191
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "map.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
 							]
 						],
 						"settings":
@@ -491,7 +599,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 191.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -503,141 +611,54 @@
 			"sheets":
 			[
 				{
-					"buffer": 1,
-					"file": "home.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1162,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								754,
-								785
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 52.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "html/add_artifact.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1478,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1132,
-								1132
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 3,
-					"file": "html/artifact_search.html",
+					"file": "main.coffee",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1592,
+						"buffer_size": 3578,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								48,
-								48
+								2889,
+								2889
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1342.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "html/view_action.html",
+					"file": "css/ztrumpall.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 805,
+						"buffer_size": 599,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31,
-								31
+								314,
+								314
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "html/view_teams.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1875,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1833,
-								1833
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -650,7 +671,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -676,7 +697,7 @@
 		"cols":
 		[
 			0.0,
-			0.335739681803,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -702,8 +723,40 @@
 		"selected_items":
 		[
 			[
+				"map",
+				"map.coffee"
+			],
+			[
+				"hom",
+				"home.html"
+			],
+			[
 				"main",
 				"main.coffee"
+			],
+			[
+				"founda",
+				"css/Foundation/foundation.css"
+			],
+			[
+				"css",
+				"css/annie.css"
+			],
+			[
+				"less",
+				"css/z_roundcorners.less"
+			],
+			[
+				"sear",
+				"html/artifact_search.html"
+			],
+			[
+				"arti",
+				"html/artifact_search.html"
+			],
+			[
+				"home",
+				"home.html"
 			],
 			[
 				"viewt",
@@ -712,10 +765,6 @@
 			[
 				"view",
 				"html/view_action.html"
-			],
-			[
-				"arti",
-				"html/artifact_search.html"
 			],
 			[
 				"add",
@@ -736,10 +785,6 @@
 			[
 				"tea",
 				"team_gallery.html"
-			],
-			[
-				"home",
-				"home.html"
 			],
 			[
 				"h",

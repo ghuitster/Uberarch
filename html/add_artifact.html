@@ -1,17 +1,20 @@
 <template name="add_artifact">
+  {{getDBSize}}
   {{> breadcrumb}}
   <div id="formDiv" class="row">
-    <div class = "large-6 columns">
-      <form id="add_form">
-        <input id="Northing" type="text" placeholder="Northing">
-        <input id="Easting" type="text" placeholder="Easting">
-        <input id="Datum" type="text" placeholder="Datum">
-        <input id="Username" type="text" placeholder="Your Name">
+    <div class="large-6 columns">
+      <form id="add_form_1">
+        <input id="Northing" type="text" placeholder="Northing"/>
+        <input id="Easting" type="text" placeholder="Easting"/>
+        <input id="Datum" type="text" placeholder="Datum"/>
+        <input id="Username" type="text" placeholder="Your Name"/>
+      </form>
     </div>
     <div class="large-6 columns">
+      <form id="add_form_2">
         <div class="row">
           <div class="large-5 columns">
-            <input type="text" id="ArtifactNumber" placeholder="Artifact #">
+            <input type="text" id="ArtifactNumber" placeholder="Artifact #"/>
           </div>
           <div class="large-4 columns">
             <select id="ArtifactType" class="medium">
@@ -23,19 +26,19 @@
             </select>
           </div>  
         </div>
-        <input id="Depth" type="text" placeholder="Depth">
-        <textarea id="Notes" placeholder="Notes" id="notes"></textarea>
+        <input id="Depth" type="text" placeholder="Depth"/>
+        <textarea id="Notes" placeholder="Notes" id="notes"/>
       </form> 
     </div>
+  </div>
 
     <div class="row">
       <div class="large-12 columns" style="text-align: right;">
-      	<button class="small button leftHomeButton" onClick="parent.location=('/home')">Home</button>
-        <!-- <button class="small button" id="random">Generate Random</button> -->
+      	<button class="small button leftHomeButton" onclick="parent.location=('/home')">Home</button>
+        <button class="small button" id="random">Generate Random</button>
         <button class="small button" id="clear">Clear</button>
         <button class="small button" id="add">Add</button>
       </div>
     </div>
 
-  </div>
 </template>

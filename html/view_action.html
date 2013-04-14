@@ -1,21 +1,22 @@
 <template name="view_action">
 	{{> breadcrumb}}
-	<div class="row">
-	<div class="large-12 columns">
-	<DL>
-		<DT><STRONG>Edited artifact #52</STRONG>
-		<DD>Changed the location of #52 to a new grid square, <STRONG>UPLOADED TO SERVER</STRONG></DD></DT>
-		<DT><STRONG>Added artifact #83</STRONG>
-		<DD>Jeff found this artifact, <STRONG>UPLOADED TO SERVER</STRONG>
-		</DD></DT>
-		<DT><STRONG>Removed artifact #7492</STRONG>
-		<DD>Turns out that this wasn't actually an artifact...Dr. Olsen was confused, <STRONG>UPLOADED TO SERVER</STRONG>
-		</DD></DT>
-		<DT><STRONG>Edited artifact #78</STRONG>
-		<DD>Added a picture of this artifact, <STRONG>UPLOADED TO SERVER</STRONG>
-		</DD></DT>
+	<div class="row" id="#actionlogrow">
+	<div class="large-12 columns" id="actionlogcol">
+	<DL id="#actionlog">
+		{{#each artifacts}}
+			{{> action}}
+		{{/each}}
 	</DL>
-	<button class="small button" onClick="parent.location=('/home')">Home</button>
 	</div>
 	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<button class="small button" onClick="parent.location=('/home')">Home</button>
+		</div>
+	</div>
+</template>
+
+<template name="action">
+	<DT><STRONG>User {{Username}} added artifact #{{ArtifactNumber}}</STRONG></DT>
+	<DD>Status: Uploaded to server.</DD>
 </template>

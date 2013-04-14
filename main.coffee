@@ -1,8 +1,9 @@
 # Set up a database that can be accessed from the client,
 # or from the server and put it in the global namespace #
 exports = this
-Artifacts = new Meteor.Collection("artifacts")
+Artifacts = new Meteor.Collection "artifacts", {idGeneration: 'MONGO'}
 exports.Artifacts = Artifacts
+DBEntryCount = null
 
 # Global convenience functions #
 getDataFromForm = (formID)->
@@ -32,16 +33,13 @@ if Meteor.isClient
     return
   #
 
-  # These are global helpers for all of the pages. #
-  Handlebars.registerHelper "iscurrentpage", (page) ->
-    return page is Session.get "current_page"
-
-  Handlebars.registerHelper "getcurrentpage", (page) ->
-    return Session.get "current_page"
-  #
-
   # Code for the add artifacts page. #
+  Template.add_artifact.getDBSize = ->
+    DBEntryCount = Artifacts.find({}).count()
+    return
+
   Template.add_artifact.events "click button#add": ->
+    DBEntryCount += 1
     Artifacts.insert (
       Northing: $("#Northing").val()
       Easting: $("#Easting").val()
@@ -51,9 +49,21 @@ if Meteor.isClient
       ArtifactNumber: $("#ArtifactNumber").val()
       ArtifactType: $("#ArtifactType").val()
       Depth: $("#Depth").val()
+      DBNumber: DBEntryCount
     )
     $('<p>Data added!</p>').insertAfter('#add')
+    clearAddForm()
+
+  Template.add_artifact.events "click button#clear" : ->
+    clearAddForm()
+
+  clearAddForm = ->
+    $('input, textarea').each ->
+      field = $(@)
+      field.val("")
+      $("#ArtifactType").get(0).selectedIndex = 0
   #
+
 
   # Searching artifacts. #
   searchFromMap = (context, page) ->
@@ -75,10 +85,6 @@ if Meteor.isClient
     criteria = getDataFromForm("#searchform")
     Session.set 'filter_criteria', criteria
 
-  Template.artifact_search.events "click button#clear" : ->
-    $('input').each ->
-      
-
   Template.artifact_search.has_search_preset = ->
     if Session.get('search_preset')
       return true
@@ -97,6 +103,10 @@ if Meteor.isClient
       Flickable('.flickable', enableMouseEvents: true)
       return
   #
+
+  # Action log #
+  Template.view_action.artifacts = ->
+    Artifacts.find {}, {sort: {DBNumber: -1}, limit: 25}
 
   # Set up page forwarding #
   Meteor.pages

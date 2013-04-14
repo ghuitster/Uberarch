@@ -1,6 +1,6 @@
 if Meteor.isClient
   this.loadmap = ->
-    paper = Raphael(document.getElementById('map'), 833, 768)
+    paper = Raphael(document.getElementById('map'), 833, 401)
 
     # Variables:
     imgdim= 900

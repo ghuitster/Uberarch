@@ -14,10 +14,14 @@
 </template>
 
 <template name="breadcrumb">
+
+  <div class="row">
    <ul class="breadcrumbs">
-    <li><a onClick="parent.location=('/home')"">Home</a></li>
+    <li><a onClick="parent.location=('/home')">Home</a></li>
     <li class="current"><a>{{pageNav}}</a></li>
   </ul> 
+</div>
+
 </template>
 
 <template name="home">
