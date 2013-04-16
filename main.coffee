@@ -112,6 +112,10 @@ if Meteor.isClient
       to: "home"
       nav: "Home"
 
+    "/newmap":
+      to: "newmap"
+      nav: "Newmap"
+
     "/add_artifact":
       to: "add_artifact"
       nav: "Add Artifact"

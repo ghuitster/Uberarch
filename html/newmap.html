@@ -1,0 +1,15 @@
+<template name="newmap">
+  <div class="row">
+    <div class="large-2 columns leftnav">
+      <button class="indexButton medium button" onClick="parent.location=('add_artifact')">Add Artifact</button>
+      <button class="indexButton medium button" onClick="parent.location=('view_action')">Action Log</button>
+      <button class="indexButton medium button" onClick="parent.location=('view_teams')">View Teams</button>
+      <button class="indexButton medium button" onClick="parent.location=('artifact_search')">Artifact Search</button>
+    </div>
+    <div class="large-10 columns" id="newmap">
+      <svg id="newmap">
+        <image x="0" y="0" width="900" height="900" xlink:href="/argentina.svg"/>
+      </svg>
+    </div>
+  </div>
+</template>
