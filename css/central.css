@@ -6,7 +6,6 @@
  
  .leftHomeButton {
  	float: left;
- 	margin-left: 14px;
  }
 
 row {
@@ -34,4 +33,8 @@ dl {
 
 #search {
 	margin-left: 324px;
+}
+
+#Notes {
+       height: 80px;
 }
