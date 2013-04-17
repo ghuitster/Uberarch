@@ -2,8 +2,6 @@ totaldim = 900
 gridcount = 10
 griddim = totaldim / gridcount
 gridcenter = griddim / 2
-groupxoffset = 0
-groupyoffset = 0
 
 #---------------------- Methods
 builddata = ->
@@ -27,14 +25,21 @@ Template.newmap.rendered = ->
     if not dataset
       return
     canvas = d3.select("g")
-    canvas.call(d3.behavior.drag().on("drag", dragmove))
     
-    dragmove = (d) ->
-      console.log d3.event.x
-      console.log d3.event.y
-      groupxoffset += d3.event.dx
-      groupyoffset += d3.event.dy
-      canvas.attr("transform", "translate(#{groupxoffset},#{groupyoffset})")
+    dragaction = (d) ->
+      repositionx = () ->
+        console.log this.x
+        return this.x
+
+      # draggables = d3.selectAll(".draggable")
+      # console.log this
+      # this.x += d3.event.x
+      # this.x += d3.event.x
+      yep = d3.select(this)
+          .attr('x', repositionx)
+          # .attr('y', repositiony)
+      # draggables.attr('x', d3.event.x)
+      # draggables.attr('y', d3.event.y)
 
 
     # Add all of the squares
@@ -48,6 +53,9 @@ Template.newmap.rendered = ->
                                                     .attr("stroke", "#141a29")
                                                     .attr("stroke-width", 0.1)
                                                     .attr("stroke-opacity", 1)
+                                                    .attr("class", "draggable")
+                                                    .call(d3.behavior.drag().on("drag", dragaction))
+                                                    # .on("click", () -> console.log("MOUSING OVER"))
     
 
     
