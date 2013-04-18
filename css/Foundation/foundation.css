@@ -1244,10 +1244,10 @@ button, .button {
   padding-left: 1.5em;
   font-size: 1em;
   background-color: #f3efec;
-  border-color: #402a10;
+  border-color: #545970;
   color: black; }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #C54B2C; }
+    background-color: #545970; }
   button:hover, button:focus, .button:hover, .button:focus {
     color: white; }
   button.secondary, .button.secondary {

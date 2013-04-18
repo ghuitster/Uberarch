@@ -66,6 +66,8 @@ Template.newmap.rendered = ->
                     .attr("height", griddim)
                     .attr("fill", "#11BAAC")
                     .attr("fill-opacity", (d) -> 0.1*d.count)
+                    .attr("fill", "#222B6E")
+                    .attr("fill-opacity", (d) -> 0.05*d.count)
                     .attr("stroke", "#141a29")
                     .attr("stroke-width", 0.1)
                     .attr("stroke-opacity", 1)
