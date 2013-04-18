@@ -59,7 +59,6 @@ Template.artifact_search.artifacts = ->
   regexes = {}
   for key, value of criteria
     regexes[key] = new RegExp ".*#{criteria[key]}.*", "i"
-  console.log Artifacts.find(regexes).fetch()
   Artifacts.find(regexes)
 
 Template.artifact_search.events "click button#search" : ->
@@ -121,3 +120,4 @@ Meteor.pages
   # optional options to pass to the PageRouter
   defaults:
     layout: "layout"
+

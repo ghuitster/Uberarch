@@ -24,33 +24,31 @@ Template.newmap.rendered = ->
     if not dataset
       return
 
-    dragstart = (d)->
-      $("#tiptip_holder").attr("id", "tiptip_holder_hidden")
-
-    dragend = (d)->
-      d3.select("#tiptip_holder_hidden").attr("id", "tiptip_holder")
-
     drag = d3.behavior.drag()
               .origin(Object)
               .on("drag", (d) ->
                 d.x = d3.event.x
                 d.y = d3.event.y
+                $("#tiptip_holder").css("display", "none")
                 draw()
               )
-              .on("dragstart", dragstart)
-              .on("dragend", dragend)
 
     over = (d) ->
       id = "#grid-#{d.row}#{d.col}"
       grid = d3.select(id)
-      grid.attr "stroke-width", 2
-      grid.attr "stroke", "#C54B2C"
+              .transition()
+              .attr("stroke-width", 2)
+              .attr("stroke", "#C54B2C")
 
     out = (d) ->
       id = "#grid-#{d.row}#{d.col}"
       grid = d3.select(id)
-      grid.attr "stroke-width", 0.1 
-      grid.attr "stroke", "black"
+              .transition()
+              .attr("stroke-width", 0.1)
+              .attr("stroke", "black")
+
+    clicked = (d) ->
+      parent.location = ("/artifact_search/#{d.row}/#{d.col}")
 
     draw = ->
       group = d3.select("g").data(groups)
@@ -64,8 +62,6 @@ Template.newmap.rendered = ->
                     .attr("y", (d) -> d.y)
                     .attr("width", griddim)
                     .attr("height", griddim)
-                    .attr("fill", "#11BAAC")
-                    .attr("fill-opacity", (d) -> 0.1*d.count)
                     .attr("fill", "#222B6E")
                     .attr("fill-opacity", (d) -> 0.05*d.count)
                     .attr("stroke", "#141a29")
@@ -77,6 +73,7 @@ Template.newmap.rendered = ->
                     .attr("class", "tip")
                     .on("mouseover", over)
                     .on("mouseout", out)
+                    .on("click", clicked)
 
       group.selectAll("text").data(dataset).enter().append("text")
                     .text((d)-> "#{d.row}, #{d.col}")
@@ -86,4 +83,4 @@ Template.newmap.rendered = ->
 
 
     draw()
-    $(".tip").tipTip({defaultPosition: "top", delay: 900, maxWidth: "#{griddim+20}px"})
+    $(".tip").tipTip({defaultPosition: "top", delay: 400, maxWidth: "#{griddim+20}px"})
