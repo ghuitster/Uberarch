@@ -4,9 +4,13 @@
   <div id="formDiv" class="row">
     <div class="large-6 columns">
       <form id="add_form_1">
+      	<span>Northing</span>
         <input id="Northing" type="text" placeholder="Northing"/>
+        <span>Easting</span>
         <input id="Easting" type="text" placeholder="Easting"/>
+        <span>Datum</span>
         <input id="Datum" type="text" placeholder="Datum"/>
+        <span>Your Name</span>
         <input id="Username" type="text" placeholder="Your Name"/>
       </form>
     </div>
@@ -14,10 +18,11 @@
       <form id="add_form_2">
         <div class="row">
           <div class="large-5 columns">
+          	<span>Artifact #</span>
             <input type="text" id="ArtifactNumber" placeholder="Artifact #"/>
           </div>
           <div class="large-4 columns">
-            <select id="ArtifactType" class="medium">
+            <select id="AddArtifactType" class="medium">
               <option>Artifact Type</option>
               <option>Pottery</option>
               <option>Bones</option>
@@ -26,8 +31,10 @@
             </select>
           </div>  
         </div>
+        <span>Depth</span>
         <input id="Depth" type="text" placeholder="Depth"/>
-        <textarea id="Notes" placeholder="Notes" id="notes"/>
+        <span>Notes</span>
+        <textarea id="AddNotes" placeholder="Notes" id="notes"/>
       </form> 
     </div>
   </div>

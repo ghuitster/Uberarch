@@ -25,6 +25,8 @@
 }
 
 #artifactslist {
-  height: 381px;
+  height: 383px;
   overflow: auto;
+  background-color: white;
+  color: black;
 }
