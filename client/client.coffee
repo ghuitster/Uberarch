@@ -55,11 +55,18 @@ searchFromMap = (context, page) ->
   Session.set 'search_preset', NandE
 
 Template.artifact_search.artifacts = ->
+  Session.set 'statusmessage', ''
   criteria = Session.get 'filter_criteria'
   regexes = {}
   for key, value of criteria
     regexes[key] = new RegExp ".*#{criteria[key]}.*", "i"
-  Artifacts.find(regexes)
+  arts = Artifacts.find(regexes)
+  if not arts.count()
+    Session.set 'statusmessage', 'No artifacts found.'
+  arts
+
+Template.artifact_search.statusmessage = ->
+  Session.get 'statusmessage'
 
 Template.artifact_search.events "click button#search" : ->
   criteria = getDataFromForm("#searchform")
