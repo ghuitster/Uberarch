@@ -79,6 +79,8 @@ Template.artifact_search.get_search_preset = (NorE) ->
 
 Template.artifact_search.events "click button#clear" : ->
   clearForm()
+  criteria = getDataFromForm("#searchform")
+  Session.set 'filter_criteria', criteria
 
 # Action log #
 Template.view_action.artifacts = ->
