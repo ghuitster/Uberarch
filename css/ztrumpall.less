@@ -1,3 +1,5 @@
+@accentcolor: #545970;
+
 /* Mixin */
 .border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
     -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
@@ -6,7 +8,7 @@
 }
  
 /* Implementation */
-button, svg, input, textarea, .list, .teamswrapper .text {
+button, svg, input, textarea, .list, .teamswrapper .text, .statusbox {
     .border-radius-custom(3px, 3px, 3px, 3px);
 } 
 
@@ -68,4 +70,14 @@ body, html {
 
 .teamswrapper .text {
     background-color: #5E4E4A;
+}
+
+.statusbox {
+    background: @accentcolor;
+    margin-bottom: 14px;
+    text-align: center;
+    color: lighten(@accentcolor, 35);
+    height: 0px;
+    padding: 0px;
+    overflow: hidden;
 }

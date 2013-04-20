@@ -20,6 +20,8 @@ Template.add_artifact.getDBSize = ->
   return
 
 Template.add_artifact.events "click button#add": ->
+  $('.statusbox').text("Artifact number #{$("#ArtifactNumber").val()} added successfully by #{$("#Username").val()}")
+  $('.statusbox').animate({height: 40, padding: 10})
   DBEntryCount += 1
   Artifacts.insert (
     Northing: $("#Northing").val()
@@ -32,7 +34,6 @@ Template.add_artifact.events "click button#add": ->
     Depth: $("#Depth").val()
     DBNumber: DBEntryCount
   )
-  $('<p>Data added!</p>').insertAfter('#add')
   clearForm()
 
 Template.add_artifact.events "click button#clear" : ->
