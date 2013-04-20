@@ -1,8 +1,8 @@
 #map {
-	background: white;
-	margin: 0;
-	border: 0;
-	padding: 0;
+    background: white;
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
 
 .leftnav {
@@ -10,6 +10,8 @@
 }
 
 #artifactslist {
+  margin-top: 15px;
+  margin-bottom: 15px;
   height: 408px;
   overflow: auto;
   color: black;
