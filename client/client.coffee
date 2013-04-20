@@ -33,12 +33,12 @@ Template.add_artifact.events "click button#add": ->
     DBNumber: DBEntryCount
   )
   $('<p>Data added!</p>').insertAfter('#add')
-  clearAddForm()
+  clearForm()
 
 Template.add_artifact.events "click button#clear" : ->
-  clearAddForm()
+  clearForm()
 
-clearAddForm = ->
+clearForm = ->
   $('input, textarea').each ->
     field = $(@)
     field.val("")
@@ -76,6 +76,9 @@ Template.artifact_search.get_search_preset = (NorE) ->
   else
     return preset['Easting']
 #
+
+Template.artifact_search.events "click button#clear" : ->
+  clearForm()
 
 # Action log #
 Template.view_action.artifacts = ->

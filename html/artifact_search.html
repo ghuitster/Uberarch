@@ -13,7 +13,7 @@
 					</select>
 					<br><br>
 					<span>Search in the Notes</span>
-					<input id="Notes" type="text" placeholder="Search in the Notes">
+					<textarea class="searchinput" id="Notes" type="text" placeholder="Search in the Notes"/>
 					<span>Search by Northing</span>
 					<input id="Northing" {{#if has_search_preset}}value="{{get_search_preset 'northing'}}"{{/if}} type="text" placeholder="Search by Northing">
 					<span>Search by Easting</span>
@@ -24,7 +24,8 @@
 					<input id="Username" type="text" placeholder="Filter by Researcher">
 				</form>
 				<button class="small button" onClick="parent.location=('/home')">Home</button>
-				<button class="small button" id="search">Search</button>
+				<button class="small button rightjustified" id="search">Search</button>
+		        <button class="small button rightjustified" id="clear">Clear</button>
 			</div>
 		</div>
 
