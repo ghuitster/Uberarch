@@ -12,7 +12,11 @@
 #artifactslist {
   margin-top: 15px;
   margin-bottom: 15px;
-  height: 408px;
+  height: 398px;
   overflow: auto;
   color: black;
+}
+
+.searchinput {
+  margin-bottom: 14px;
 }

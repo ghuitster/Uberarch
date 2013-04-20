@@ -31,8 +31,9 @@ dl {
     //margin-left: 2.00em;
 }
 
-#search {
-	margin-left: 324px;
+.rightjustified {
+	float: right;
+	margin-left: 10px;
 }
 
 #AddNotes {
