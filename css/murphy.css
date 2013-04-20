@@ -1,23 +1,8 @@
 #map {
 	background: white;
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-}
-
-.map rect {
-  fill: #fff;
-  fill-opacity: .15;
-  stroke: red;
-  shape-rendering: crispEdges;
-}
-
-.layer rect {
-  fill: #000;
-  fill-opacity: .10;
-  stroke: black;
-  shape-rendering: auto;
-  vector-effect: non-scaling-stroke;
+	margin: 0;
+	border: 0;
+	padding: 0;
 }
 
 .leftnav {
@@ -25,8 +10,7 @@
 }
 
 #artifactslist {
-  height: 388px;
+  height: 408px;
   overflow: auto;
-  background-color: white;
   color: black;
 }
