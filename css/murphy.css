@@ -10,11 +10,11 @@
 }
 
 #artifactslist {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  height: 398px;
+  height: 429px;
   overflow: auto;
   color: black;
+  padding: 10px;
+  background-color: white;
 }
 
 .searchinput {

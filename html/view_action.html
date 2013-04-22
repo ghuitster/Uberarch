@@ -1,13 +1,15 @@
 <template name="view_action">
 	{{> breadcrumb}}
 	<div class="row" id="#actionlogrow">
-	<div class="large-12 columns" id="actionlogcol">
-	<DL id="#actionlog">
-		{{#each artifacts}}
-			{{> action}}
-		{{/each}}
-	</DL>
-	</div>
+	<div class="large-12 columns rounded">
+			<div class="actionloglist" id="actionlogcol">
+				<DL id="#actionlog">
+					{{#each artifacts}}
+					{{> action}}
+					{{/each}}
+				</DL>
+			</div>
+		</div>
 	</div>
 	<div class="row">
 		<div class="large-12 columns">

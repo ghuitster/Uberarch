@@ -36,9 +36,10 @@
 }
 
 #screen, body, html{
-	background-color: #312A28;
+	background-color: rgb(70,55,50);
 }
 
 #notes{
 	height: 100px;
 }
+
