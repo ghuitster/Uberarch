@@ -63,7 +63,7 @@ Template.newmap.rendered = ->
                     .attr("width", griddim)
                     .attr("height", griddim)
                     .attr("fill", "#222B6E")
-                    .attr("fill-opacity", (d) -> 0.05*d.count)
+                    .attr("fill-opacity", (d) -> 0.15*d.count)
                     .attr("stroke", "#141a29")
                     .attr("stroke-width", 0.1)
                     .attr("stroke-opacity", 1)
@@ -83,4 +83,4 @@ Template.newmap.rendered = ->
 
 
     draw()
-    $(".tip").tipTip({defaultPosition: "top", delay: 400, maxWidth: "#{griddim+20}px"})
+    $(".tip").tipTip({defaultPosition: "top", delay: 1000, maxWidth: "#{griddim+20}px"})
